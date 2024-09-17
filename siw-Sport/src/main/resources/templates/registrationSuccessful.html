@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SiwMovie - Registrazione conclusa</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+<style>
+	
+	body{
+		font-family: Arial, sans-serif;
+		align-items: center;
+        text-decoration: none;
+	}
+	a{
+		text-decoration: none;
+		 background-color: #007bff;
+		 border-radius: 5px;
+		 padding: 2px;
+		 margin-top: 25px;
+		 color:white ;
+	}
+	
+	
+	</style>
+
+
+
+
+<body>
+	<header>
+		
+			<a href="/logout">Logout</a>
+			<a href="/login">Login</a>
+				</div>
+	</header>
+
+	<div>
+	</div>
+	<h1>Congratulazioni ti sei registrato!</h1>
+	<div>
+		<span>Nome: </span>
+		<span th:text="${presidente.nome}"></span>
+	</div>
+	<div>
+		<span>Cognome: </span>
+		<span th:text="${presidente.cognome}"></span>
+	</div>
+</body>
+</html>

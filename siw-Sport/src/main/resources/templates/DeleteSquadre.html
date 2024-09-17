@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+	<meta charset="UTF-8">
+	    
+	    <title>Squadre</title>
+		
+</head>
+<style>
+	body{
+		font-family: Arial, sans-serif;
+	}
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link-list {
+    width: 100%;
+  }
+
+  .item {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+	margin-top: 10px;
+  }
+
+  .link {
+    margin-right: 20px; /* Spazio tra la scritta e il bottone */
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .button {
+   background-color: #28a745;
+   border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #d32f2f;
+  }
+  .link{
+	text-decoration: none;
+			  color: #333;
+			  
+  }
+  .logout{
+	color:white;
+				text-decoration: none;
+			 background-color: #28a745;
+				padding: 5px;
+				border-radius: 5px ;
+  }
+  
+</style>
+
+
+
+
+	<body >
+		<header>
+		       <a href="/logout"class="logout">Logout</a>
+		    </header>
+
+		    <div th:if="${DeleteSquadre.isEmpty()}">Non ci sono recensioni nel sistema</div>
+
+		    <div class="container">
+		        <div th:each="squadra : ${DeleteSquadre}" class="link-list">
+		            <div class="item">
+		                <a th:href="@{'/squadra/' + ${squadra.id}}" th:text="${squadra.nome}" class="link">squadra</a>
+		                <form th:action="@{'admin/CancellaSquadra' + ${squadra.id}}" method="get">
+		                    <button type="submit" class="button">Cancella</button>
+		                </form>
+						</div>
+		        </div>
+		    </div>
+		</body>
+</html>

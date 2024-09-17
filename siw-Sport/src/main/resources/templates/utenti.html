@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    
+</head>
+<style>
+
+h1 {
+			   font-family: Arial, sans-serif;
+			   margin-top: 2px;
+			    font-size: 30px;
+			    margin-bottom: 10px;
+				margin-top:10 px;
+			    color: #333;
+			    font-weight: normal;
+				align-items: center;
+				text-align: center;
+		
+			}
+			h3 {
+				color: #333;
+				
+			}
+			
+			body {
+				    font-family: Arial, sans-serif; /* Font per il testo */
+				    margin: 0; /* Elimina il margine predefinito */
+				    padding: 0; /* Elimina il padding predefinito */
+				}
+		   
+		   a {
+		   	    display: inline-block;
+		   	    text-decoration: none;
+		   	    color: #fff;
+		   	    background-color: #28a745;
+		   	    padding: 10px 25px;
+		   	    border-radius: 5px;
+		   	    font-size: 16px;
+		   	    margin: 10px 0;
+		   	    transition: background-color 0.3s ease;
+		   	}
+			
+			.content {
+				    text-align: center; /* Allinea il testo al centro */
+				    margin-top: 50px; /* Spazio sopra il contenuto */
+				    color: white; /* Colore del testo */
+					}
+			a:over{
+				 background-color: #218838;
+						
+					}
+					.logout{
+						color:white;
+									text-decoration: none;
+								 background-color: #28a745;
+									padding: 5px;
+									border-radius: 5px ;
+					  }
+			
+		   
+	  </style>
+
+<body>
+	<header>
+			       <a href="/logout"class="logout">Logout</a>
+			    </header>
+	
+    <div>
+		<h1>Presidenti:</h1>
+        <div th:if="${utentiS.isEmpty()}" >non ci sono presidenti nel sistema</div>
+
+        <div th:if="${!utentiS.isEmpty()}" class="content">
+			<h3>Clicca su un Presidente per aggiungergli una squadra</h3>
+            <div th:each="Utente : ${utentiS}">
+                <a th:href="@{'/aggiungiSquadra/' + ${Utente.id}}" th:text="${Utente.nome}"></a>
+            </div>
+			
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    
+</head>
+<style>
+	h1 {
+			   font-family: Arial, sans-serif;
+			   margin-top: 15px;
+			    font-size: 30px;
+			    color: #333;
+			    font-weight: normal;
+				text-align: center;
+			}
+			body {
+				    font-family: Arial, sans-serif; /* Font per il testo */
+				    margin: 0; /* Elimina il margine predefinito */
+				    padding: 0; /* Elimina il padding predefinito */
+				}
+		   
+		   a {
+		   	    display: inline-block;
+		   	    text-decoration: none;
+		   	    color: #fff;
+		   	    background-color: #007bff;
+		   	    padding: 10px 25px;
+		   	    border-radius: 5px;
+		   	    font-size: 16px;
+		   	    transition: background-color 0.3s ease;
+		   	}
+			
+			.container {
+				    text-align: center; /* Allinea il testo al centro */
+				    color: white; /* Colore del testo */
+					margin-top:50 px;
+					width: 80%;
+					 border-radius: 5px;
+					color: #333;
+					 border-width: 2px;
+					padding: 5px;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+					margin: 0 auto; /* Centra orizzontalmente */
+					 text-align: center;
+					}
+					
+			a:over{
+				background-color: rgb(0, 91, 191);
+						
+					}
+					.logout{
+						margin-left:5px;
+					}
+					.giocatore{
+						margin-top: 10px;
+					}
+					
+			
+		   
+	  </style>
+ 
+
+<body>
+    
+    <div>
+        <h1>Giocatori:</h1>
+		
+		
+
+        <div th:if="${Giocatori.isEmpty()}" >non ci sono giocatori presenti </div>
+
+        <div class="container">
+            <div th:each="Giocatore : ${Giocatori}" class="Giocatori" >
+				<div class="giocatore">
+				<a th:href="@{'/giocatore/' + ${Giocatore.id}}" th:text="${Giocatore.nome}"></a>
+				</div>
+				</div>
+	    </div>
+			
+
+    </div>
+</body>
+
+</html>

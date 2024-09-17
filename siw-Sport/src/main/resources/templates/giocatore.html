@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<style>
+	
+body{
+	font-family: Arial, sans-serif;
+			   margin-top: 15px;
+			    font-size: 20px;
+			    color: #333;
+			    font-weight: normal;
+				text-align: center;
+}
+.container{
+	        width: 80%;
+		    border-radius: 5px;
+		    color: #333;
+		    border-width: 2px;
+		    padding: 5px;
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		    margin: 0 auto; /* Centra orizzontalmente */
+			margin-top:10%;
+			text-align: center;
+}
+	
+	
+</style>
+
+   
+
+<body>
+    
+   
+        <h1 th:text="${Giocatore.nome} + ' ' + ${Giocatore.cognome}"></h1>
+		<div class="container">
+		<div th:if="${Giocatore.Datatesseramento!=null}" >
+			<p> Data tesseramento:<span th:text="${Giocatore.Datatesseramento}"></span></p>
+								
+		</div>
+		<div th:if="${Giocatore.DataNascita!=null}" >
+			
+					<p> Data nascita:<span th:text="${Giocatore.DataNascita}"></span></p>
+					
+				</div>			
+		<div th:if="${Giocatore.squadra!=null}" >
+	  <span th:text="${Giocatore.squadra.nome}"></span>
+									
+								</div>
+								
+				
+	
+		
+    </div>
+</body>
+
+</html>

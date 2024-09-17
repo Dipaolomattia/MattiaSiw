@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		
+	body{
+		font-family: Arial, sans-serif;
+				   margin-top: 15px;
+				    font-size: 20px;
+				    color: #333;
+				    font-weight: normal;
+					text-align: center;
+	}
+	.container{
+		        width: 80%;
+			    border-radius: 5px;
+			    color: #333;
+			    border-width: 2px;
+			    padding: 5px;
+			    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			    margin: 0 auto; /* Centra orizzontalmente */
+				margin-top:10%;
+				text-align: center;
+	}
+		
+		
+	</style>
+
+
+   
+
+<body>
+    
+ 
+
+    <div >
+        <h1 th:text="${Utente.nome} + ' ' + ${Utente.cognome}"></h1>
+	   
+    </div>
+	<div class="container">
+			<div th:if="${Utente.DataNascita!=null}" >
+				<p> Data di Nascita:<span th:text="${Utente.DataNascita}"></span></p>				
+			</div>
+			<div >
+				<p> Luogo:<span th:text="${Utente.luogo}"></span></p>
+			</div>
+			<div >
+				<p> Codice fiscale:<span th:text="${Utente.CodiceFiscale}"></span></p>
+			</div>
+			
+			
+			
+			
+									</div>
+									
+	
+</body>
+
+</html>

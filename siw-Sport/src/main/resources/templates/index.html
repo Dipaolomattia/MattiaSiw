@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html>
+<head>
+    <title>SiwSerieA - Homepage</title>
+	<link rel="stylesheet" href="/css/index.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	
+</head>
+<style>
+	
+	/* Stile globale del corpo */
+	body {
+	    font-family: 'Arial', sans-serif;
+	    background-color: #f4f4f4;
+	    margin: 0;
+	    padding: 0;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100vh;
+	    color: #333;
+	}
+
+	/* Contenitore principale */
+	.container {
+	    background-color: #ffffff;
+	    padding: 40px;
+	    border-radius: 8px;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    max-width: 600px;
+	    width: 100%;
+	    text-align: center;
+	    border: 1px solid #ddd;
+	}
+
+	/* Stile per i titoli */
+	h1 {
+	    font-size: 24px;
+	    margin-bottom: 20px;
+	    color: #333;
+	    font-weight: normal;
+	}
+
+	/* Stile per i link */
+	a {
+	    display: inline-block;
+	    text-decoration: none;
+	    color: #fff;
+	    background-color: #007bff;
+	    padding: 10px 25px;
+	    border-radius: 5px;
+	    font-size: 16px;
+	    margin: 10px 0;
+	    transition: background-color 0.3s ease;
+	}
+
+	/* Stile per hover sui link */
+	a:hover {
+	    background-color: #0056b3;
+	}
+
+	/* Stile per link 'admin' */
+	a.admin {
+	    background-color: #28a745;
+	}
+
+	a.admin:hover {
+	    background-color: #218838;
+	}
+
+	/* Margine tra i blocchi */
+	div {
+	    margin: 15px 0;
+	}
+	.logo {
+	    position: absolute; /* Posiziona il logo in modo assoluto */
+		top: 0px; /* Spazio dall'alto */
+	    left: 20px; /* Spazio da sinistra */
+	}
+
+
+</style>
+
+<body>
+	<header>
+		<div class="logo"><img src="/images/logo.png" width="25%"/></div>
+	</header>
+	
+	<div class="container">
+		<h1>Benvenuto su Siw-Sport</h1>
+
+		<div>
+			<a href="/login">Login</a>
+		</div>
+		 
+		<div>
+			<a href="/register">Registrati</a>
+		</div>
+		
+		<div>
+			<a href="/registerAdmin" class="admin">Registrati Come Admin</a>
+		</div>
+		
+		<div>
+			<a href="/Squadre">Squadre</a>
+		</div>
+	</div>
+</body>
+</html>
+

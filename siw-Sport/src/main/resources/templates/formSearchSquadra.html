@@ -1,0 +1,115 @@
+<html>
+	
+<head>
+	
+</head>
+<style>
+		body {
+		    font-family: Arial, sans-serif;
+		    background: url('/images/col.jpg') no-repeat center center fixed; 
+		    background-size: cover;
+		    margin: 0;
+		    padding: 0;
+		    color: white; /* Colore del testo predefinito */
+		}
+
+		/* Stile per l'intestazione */
+		header {
+		    background-color: rgb(83, 133, 251); /* Sfondo nero semi-trasparente */
+		    color: #fff;
+		    padding: 10px 0;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    padding-left: 40px;
+		    padding-right: 40px;
+		}
+
+		/* Stile per il logo */
+		header img {
+		    max-width: 20%;
+		    height: auto;
+		}
+
+		/* Stile per il titolo principale */
+		h1 {
+		     color: #333;
+		    font-size: 28px; /* Dimensione del testo */
+		    text-align: center;
+		    margin-top: 20px;
+		}
+
+		/* Stile per il modulo di ricerca */
+		form {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    margin: 20px auto;
+		    padding: 20px;
+		    border-radius: 8px; /* Angoli arrotondati */
+		    max-width: 500px; /* Larghezza massima del modulo */
+		}
+
+		form div {
+		    margin-bottom: 15px;
+			  color: #333;
+		}
+
+		form input[type="text"] {
+		    padding: 10px;
+		    font-size: 16px;
+		    border: 1px solid #ccc;
+		    border-radius: 5px;
+		    width: 100%;
+		}
+
+		form input[type="submit"] {
+			background-color: #007bff;
+		    color: white;
+		    border: none;
+		    padding: 12px 20px;
+		    font-size: 16px;
+		    border-radius: 5px;
+		    cursor: pointer;
+		    transition: background-color 0.3s ease;
+		}
+
+		form input[type="submit"]:hover {
+		        background-color: #0056b3;/* Giallo più scuro al passaggio del mouse */
+		}
+		a{
+			color:white;
+			text-decoration: none;
+			background-color: #0056b3;
+			padding: 5px;
+			border-radius: 5px ;
+		}
+		
+	</style>
+
+
+	<body>
+	    <header>
+	        <div th:if="${userDetails}">
+	            <span th:text="${userDetails.username}"></span>
+	            <a href="/logout">Logout</a>
+	        </div>
+	        <div th:unless="${user}">
+	            <a href="/login">Login</a>
+	        </div>
+	    </header>
+		
+
+	    <h1>Cerca Squadra per titolo</h1>
+	    <form th:action="@{/searchSquadra}" method="post">
+	        <div>Titolo: <input type="text" th:name="nome"/></div>
+	        <div><input type="submit" value="Cerca" /></div>
+	        
+	    </form>
+	</body>
+
+
+
+
+
+</html>

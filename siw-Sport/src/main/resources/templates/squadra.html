@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Gioco</title>
+    <link rel="stylesheet" href="/stile.css?version=2" />
+  </head>
+  
+  <style>
+	body {
+		    font-family: Arial, sans-serif; 
+		    margin-left: 20px;
+		    padding: 0;
+			color: #333;
+		
+			
+		}
+		a{
+			text-decoration: none;
+			color: #333;
+		}
+		.squadraContainer{
+			
+			margin-left: 20px;
+			text-align: center;
+		}		
+		
+		.giocatoriContainer {
+		    width: 80%;
+		    border-radius: 5px;
+		    color: #333;
+		    border-width: 2px;
+		    padding: 5px;
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		    margin: 0 auto; /* Centra orizzontalmente */
+			text-align: center;
+		}
+
+		.player{
+		
+		background-color: #007BFF;
+		border-radius: 5px;
+		padding: 5px;
+		color: white;
+		
+	    }
+		div{
+			margin-top: 15px;
+		}
+		
+		.player:over{
+		   background-color: #0056b3;
+			
+		}
+		
+	
+	
+	
+  </style>
+
+  
+  <body>
+   <!-- <div class="logo">
+            <a href="/success"><img src="/images/trr.png" width="30%"></a>
+        </div>
+		-->
+   
+    <div th:if="${squadra}" class="squadraContainer">
+		
+  <h1 th:text="${squadra.nome}">Squadra</h1>
+         <div>Anno: <span th:text="'(' + ${squadra.year} + ')'">2000</span></div>
+          <div>Indirizzo Sede: <span th:text="'(' + ${squadra.indirizzo} + ')'">2000</span></div>
+    </div>
+    </div>
+
+    <div th:if="${Giocatori}" class="giocatoriContainer">
+		<h2>Giocatori:</h2>
+    <div th:each="Giocatore : ${Giocatori}">
+		<a th:href="@{'/giocatore/' + ${Giocatore.id}}" th:text="${Giocatore.nome}" class="player"></a>
+    </div>
+
+		<div >
+			<a th:href="@{'/Utente/' + ${squadra.user.id}}"th:text="${squadra.user.nome}"></a>
+		</div>
+	
+	<div th:unless="${Giocatori}">Non ci sono giocatori nella squadra</div>
+    <div th:unless="${squadra}">Non esiste</div>
+	
+  
+ </body>
+</html>

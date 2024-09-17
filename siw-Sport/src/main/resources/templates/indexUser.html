@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	
+	
+	<style>
+		h1 {
+			   font-family: Arial, sans-serif;
+			   margin-top: 2px;
+			    font-size: 30px;
+			    margin-bottom: 10px;
+			    color: #333;
+			    font-weight: normal;
+				align-items: center;
+				text-align: center;
+		
+			}
+			body {
+				    font-family: Arial, sans-serif; /* Font per il testo */
+				    margin: 0; /* Elimina il margine predefinito */
+				    padding: 0; /* Elimina il padding predefinito */
+				}
+		   
+		   a {
+		   	    display: inline-block;
+		   	    text-decoration: none;
+		   	    color: #fff;
+		   	    background-color: #007bff;
+		   	    padding: 10px 25px;
+		   	    border-radius: 5px;
+		   	    font-size: 16px;
+		   	    margin: 10px 0;
+		   	    transition: background-color 0.3s ease;
+		   	}
+			
+			.content {
+				    text-align: center; /* Allinea il testo al centro */
+				    margin-top: 50px; /* Spazio sopra il contenuto */
+				    color: white; /* Colore del testo */
+					}
+			a:over{
+				background-color: rgb(0, 91, 191);
+						
+					}
+					.logout{
+						margin-left:5px;
+					}
+			
+		   
+	  </style>
+	<body>
+		
+		<a href="/logout" class="logout">Logout</a>
+
+      <div>
+	<h1>INDEX USER</h1>
+     </div>
+	    <div class="content">
+
+			<div th:if="${presidente!=null}">
+					<div th:if="${presidente.squadra==null}">il presidente non ha una squadra</div>
+					<div th:unless="${presidente.squadra==null}">
+						<div>
+							<a th:href="@{'/aggiungiGiocatore'}" >aggiungi un giocatore </a>	
+						</div>
+						<div> 
+					   <a th:href="@{'/DeleteGiocatorePresidente/' + ${presidenteId}} ">rimuovi un giocatore della tua squadra </a>
+					   </div>
+					   <div> 
+					   <a th:href="@{'/GiocatoriSvincolati' }">Aggiungi giocatore Svincolato alla tua squadra </a>
+					   </div>
+					   <div>
+						<a th:href="@{'/foundSquadra'}">trova squadra </a>
+					   </div>
+					   
+					   <div>
+					   <a th:href="@{'/foundGiocatore' }">trova un giocatore </a>
+					   </div>
+
+				    </div>
+					</div>
+					   
+
+			
+		</div>
+		
+
+		
+	
+		
+	
+    </body>
+
+
+
+</html>

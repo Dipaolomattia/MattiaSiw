@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		SiwMovie - Registrazione
+	</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header div {
+        margin: 0 20px;
+    }
+
+    header a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #555;
+        transition: background-color 0.3s;
+        font-size: 18px; /* Aumentato la dimensione del testo */
+    }
+
+    header a:hover {
+        background-color: #777;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 36px; /* Aumentato la dimensione del testo */
+        margin: 20px 0;
+    }
+
+    form {
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px; /* Aumentato la dimensione del testo */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px; /* Aumentato la dimensione del testo */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #777;
+    }
+
+    span.error {
+        color: red;
+    }
+div{
+	margin-top: 5px;
+	margin-bottom: 5px;
+   }
+</style>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${presidente}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+	<h1>Registrazione nuovo Presidente</h1>
+	<form th:action="@{/register}" method="POST">
+		<div>
+			<label>Nome</label>
+			<span><input type="text" placeholder="nome" required th:field="${presidente.nome}" /></span>
+			<span th:if="${#fields.hasErrors('presidente.nome')}" th:errors="${presidente.nome}" th:style="'color:red'">
+			</span>
+		</div>
+		<div>
+			<label>Cognome</label>
+			<span><input type="text" placeholder="surname" required th:field="${presidente.cognome}" /></span>
+			<span th:if="${#fields.hasErrors('presidente.cognome')}" th:errors="${presidente.cognome}" th:style="'color:red'">
+			</span>
+		</div>
+		<div>
+		   <label>Codice fiscale</label>
+       	<span><input type="text" placeholder="Codice fiscale" required th:field="${presidente.CodiceFiscale}" /></span>
+		 </div>
+		 <label>Luogo di nascita</label>
+		       	<span><input type="text" placeholder="Luogo nascita" required th:field="${presidente.luogo}" /></span>
+		 	 </div>
+			 <div>
+				
+			 <label>Data:</label>
+	         <input required type="date" id="data" name="data" th:field="${presidente.DataNascita}" >
+		  </div>
+		<div>
+			<label>Username</label>
+			<span>
+				<input type="text" placeholder="username" required th:field="${credentials.username}" />
+			</span>
+			<span th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}"
+				th:style="'color:red'">
+			</span>
+		</div>
+		
+		
+		
+		
+		
+		
+		<div>
+			<label>Password</label>
+			<span><input type="password" placeholder="password" required th:field="${credentials.password}" />
+			</span>
+			
+		</div>
+		
+		
+		
+	
+		<div>
+			<button type="submit">Registra</button>
+		</div>
+		
+	</form>
+</body>
+
+</html>
