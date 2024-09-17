@@ -63,8 +63,8 @@ public class GiocatoreController {
 	
    @PostMapping("/searchGiocatore")
 	public String searchGiocatore(Model model,@RequestParam("nome")String nome) {
-		model.addAttribute("giocatore", giocatoreService.findGiocatoriBynome(nome));
-		return "squadra.html";
+		model.addAttribute("Giocatori", giocatoreService.findGiocatoriBynome(nome));
+		return "giocatori.html";
 	}
 
 }

@@ -23,7 +23,7 @@ public interface GiocatoreRepository extends CrudRepository<Giocatore, Long> {
     public List<Giocatore> findGiocatoriBySquadraid(@Param("fid")Long id);
     
     
-    public List<Giocatore> findGiocatoreByNome(@Param("fid")String nome);
+     public List<Giocatore> findGiocatoreByNome(String nome);
     
     
 
