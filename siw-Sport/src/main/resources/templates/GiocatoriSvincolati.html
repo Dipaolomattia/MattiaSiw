@@ -65,12 +65,14 @@
 		  .logout:hover {
 		      background-color: #0056b3;
 		    }
-		  
+		  .Inesistenti{
+			text-align: center;
+		  }
 		</style>
 		<header>
 			<a href="/logout"class="logout">Logout</a>
 		    </header>
-			<div th:if="${Svincolati.isEmpty()}">Non ci sono giocatori svincolati</div>
+			<div th:if="${Svincolati.isEmpty()}" class="Inesistenti">Non ci sono giocatori svincolati</div>
 			<div class="container">
 				<div th:each="Giocatore : ${Svincolati}" class="link-list">
 					<div class="item">

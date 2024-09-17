@@ -57,6 +57,9 @@
 					.logo{
 						background-color: white;
 					}
+					.Inesistenti{
+						text-align: center;
+					}
 					
 			
 		   
@@ -74,7 +77,7 @@
 		
 		
 
-        <div th:if="${Giocatori.isEmpty()}" >non ci sono giocatori presenti </div>
+        <div th:if="${Giocatori.isEmpty()}"class="Inesistenti" >non ci sono giocatori presenti </div>
 
         <div class="container">
             <div th:each="Giocatore : ${Giocatori}" class="Giocatori" >
