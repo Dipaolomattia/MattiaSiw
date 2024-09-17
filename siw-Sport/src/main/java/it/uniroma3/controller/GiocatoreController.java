@@ -50,7 +50,7 @@ public class GiocatoreController {
 	
 	@GetMapping("/giocatori/squadra/{id}")
 	public String FindRecensioniByUsergId(Model model,@PathVariable("id") Long id){
-		model.addAttribute("recensioni",giocatoreService.findgiocatoriBySquadraID(id));
+		model.addAttribute("Giocatori",giocatoreService.findgiocatoriBySquadraID(id));
 		return "giocatori.html";
 	
 	}
@@ -68,71 +68,3 @@ public class GiocatoreController {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-//	@GetMapping("/gioco/{id}/recensioni")
-//	@Transactional
-//	public String getRecensioniPerGioco(@PathVariable("id") Long id, Model model) {
-////		model.addAttribute("recensioni", this.giocatoreService.FindRecensioniByGiocoId(id));
-//		return "recensioni.html";
-//	}
-//	
-//
-//	
-//	}
-//	
-//	@GetMapping("/aggiungiRecensione")
-//	@Transactional
-//	public String AddRecensione(Model model,@ModelAttribute("presidente") Presidente presidente) {
-//		Giocatore r=new Giocatore();
-//		model.addAttribute("giocatore",r);
-//		model.addAttribute(presidente);
-//		return "user/formNewRecensione.html";
-//		
-//	}
-//	
-//	@PostMapping("/addRecensione")
-//	@Transactional
-//		public String newRecensione(
-//				@ModelAttribute("recensione")Giocatore giocatore, Model model,HttpSession session,
-//			     @RequestParam("rating") Integer rating, @RequestParam("data")Date data) {
-//	    	UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//			Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
-//			Presidente presidente = credentials.getPresidente();
-//		    Squadra squadra= (Squadra)session.getAttribute("giocoMem");
-//			if (rating == null) {//da finire errore
-//		        // Aggiungi un messaggio di errore al modello
-//		        model.addAttribute("error", "Devi selezionare un punteggio per la recensione.");
-//		        // Ritorna alla pagina di inserimento recensione
-//		        return "recensioneForm"; // Assicurati che questo sia il nome corretto del tuo template di inserimento
-//		    }
-////			recensione.setGioco(gioco);
-////			recensione.setNumeroStelle(rating);
-////			recensione.setData(data);
-////			recensione.setUser(user);
-////			
-//		    this.giocatoreService.save(giocatore);
-//		    //user.getRecensioni().add(recensione);
-////			model.addAttribute("recensioni", this.giocatoreService.FindRecensioniByUserId(user.getId()));
-////			return "redirect:/recensioni";
-//			return "redirect:/gioco/"+squadra.getId()+"/recensioni";
-//		}
-
-//	@GetMapping("/User/CancellaRecensione/{id}")
-//	@Transactional
-//    public String cancellaRecensione(Model model,@PathVariable("id") Long id) {  
-//		giocatoreService.deleteById(id);
-//        UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//		Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
-//		Presidente user = credentials.getPresidente();
-////	   	model.addAttribute("recensioni", giocatoreService.FindRecensioniByUserId(user.getId()));
-//		return "user/DeleteRecensioni.html";
-//    }
