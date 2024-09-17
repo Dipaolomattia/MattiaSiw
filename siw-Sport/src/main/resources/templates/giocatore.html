@@ -29,7 +29,10 @@ body{
 
 <body>
     
-   
+	<div th:if="${Giocatore.isEmpty()}" >Non ci sono giocatori nel sistema
+		<div>
+		
+	</div>
         <h1 th:text="${Giocatore.nome} + ' ' + ${Giocatore.cognome}"></h1>
 		<div class="container">
 		<div th:if="${Giocatore.Datatesseramento!=null}" >

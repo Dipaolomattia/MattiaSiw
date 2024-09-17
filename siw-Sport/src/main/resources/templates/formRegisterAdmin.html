@@ -20,13 +20,11 @@
        }
 
        header {
-           background-color: #333;
            color: #fff;
            padding: 10px 0;
            width: 100%;
            display: flex;
-           justify-content: space-between;
-           align-items: center;
+         
        }
 
        header div {
@@ -39,15 +37,8 @@
            margin-left: 10px;
            padding: 10px 20px;
            border-radius: 5px;
-           background-color: #555;
-           transition: background-color 0.3s;
            font-size: 18px; /* Aumentato la dimensione del testo */
        }
-
-       header a:hover {
-           background-color: #777;
-       }
-
        h1 {
            color: #333;
            font-size: 36px; /* Aumentato la dimensione del testo */
@@ -107,6 +98,7 @@
 		<div th:unless="${Admin}">
 			<a href="/login">Login</a>
 		</div>
+		<div><a href="/" class="logo"><img src="/images/logo.png" width="25%"/></a></div>
 	</header>
 	<h1>Registrazione nuovo Admin</h1>
 	<form th:action="@{/registerAdmin}" method="POST">
@@ -124,13 +116,6 @@
 			
 		</div>
 		
-		<!--<div>
-			<label>nascita</label>
-			<span><input type="text" placeholder="email" required th:field="${user.email}" /></span>
-			<span th:if="${#fields.hasErrors('user.email')}" th:errors="${user.email}" th:style="'color:red'">
-			</span>
-		</div>
-		-->
 		
 		<div>
 			<label>Username</label>

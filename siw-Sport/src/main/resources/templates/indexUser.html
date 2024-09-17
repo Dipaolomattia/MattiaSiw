@@ -47,6 +47,9 @@
 					.logout{
 						margin-left:5px;
 					}
+					.senzaSq{
+					    margin-left: 5px;
+					}
 			
 		   
 	  </style>
@@ -60,7 +63,7 @@
 	    <div class="content">
 
 			<div th:if="${presidente!=null}">
-					<div th:if="${presidente.squadra==null}">il presidente non ha una squadra</div>
+				
 					<div th:unless="${presidente.squadra==null}">
 						<div>
 							<a th:href="@{'/aggiungiGiocatore'}" >aggiungi un giocatore </a>	
@@ -81,10 +84,10 @@
 
 				    </div>
 					</div>
-					   
-
 			
-		</div>
+		            </div>
+					
+		<div th:if="${presidente.squadra==null}" class="senzaSq">il presidente non ha una squadra</div>
 		
 
 		

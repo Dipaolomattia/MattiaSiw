@@ -32,9 +32,7 @@ public class Presidente {
 	 private String cognome;
 	 private String CodiceFiscale;
 	 
-	@OneToOne (fetch=FetchType.EAGER)
-	@JoinColumn(name = "squadra_id", nullable = true)
-	@OnDelete(action = OnDeleteAction.SET_NULL)
+	@OneToOne (fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	private Squadra squadra;
 	
 	@OneToOne(cascade = CascadeType.ALL)

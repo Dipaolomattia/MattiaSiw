@@ -44,6 +44,13 @@
 		color: white;
 		
 	    }
+		.presidente{	
+		        background-color: #28a745;
+				border-radius: 5px;
+				padding: 5px;
+				color: white;
+			
+		}
 		div{
 			margin-top: 15px;
 		}
@@ -60,11 +67,10 @@
 
   
   <body>
-   <!-- <div class="logo">
-            <a href="/success"><img src="/images/trr.png" width="30%"></a>
-        </div>
-		-->
-   
+	<header>
+					<div><a href="/" class="logo"><img src="/images/logo.png" width="200px"/></a></div>
+		</header>
+				
     <div th:if="${squadra}" class="squadraContainer">
 		
   <h1 th:text="${squadra.nome}">Squadra</h1>
@@ -80,9 +86,11 @@
     </div>
 
 		<div >
-			<a th:href="@{'/Utente/' + ${squadra.user.id}}"th:text="${squadra.user.nome}"></a>
+			
+			<a th:href="@{'/Utente/' + ${squadra.user.id}}"th:text="${squadra.user.nome}"class="presidente"></a>
+			
 		</div>
-	
+	</div>
 	<div th:unless="${Giocatori}">Non ci sono giocatori nella squadra</div>
     <div th:unless="${squadra}">Non esiste</div>
 	

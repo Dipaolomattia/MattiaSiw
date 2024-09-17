@@ -27,9 +27,8 @@
 
 		/* Stile per l'header */
 		header {
-		    position: absolute;
-		    top: 0;
-		    right: 20px;
+		    position: relative;
+		    padding-left: 100px; /* Aggiungi spazio per il logo */
 		    font-size: 14px;
 		}
 
@@ -133,11 +132,10 @@
 		a:hover {
 		    text-decoration: underline;
 		}
-		.Logo{
-		
-			width: 15em ;
-			height: auto;
-		
+		.logo {
+		    position: absolute;
+		    top: 10px;
+		    left: 10px;
 		}
 
 			 </style>
@@ -148,8 +146,9 @@
 			<span th:text="${userDetails.username}"></span>
 			<a href="/logout">Logout</a>
 		</div>
-
+		
 		<div th:unless="${user}">
+			
 		</div>
 
 	</header>
@@ -171,8 +170,8 @@
 				<span><button type="submit">Login</button></span>
 			</div>
 			<div>
-								<a th:href="@{/register}" th:text="Registrati">Registrati</a>
-							</div>
+				<a th:href="@{/register}" th:text="Registrati">Registrati</a>
+			</div>
 			
 	</form>
 	

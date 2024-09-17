@@ -32,9 +32,7 @@ public class Squadra {
 		 private Integer year;
 		 private String indirizzo;
 		 
-		 @OneToOne(mappedBy = "squadra",fetch=FetchType.EAGER)
-		 @JoinColumn(name = "squadra_id", nullable = true)
-		 @OnDelete(action = OnDeleteAction.SET_NULL) // Imposta la chiave esterna a NULL quando la squadra viene eliminata
+		 @OneToOne(mappedBy = "squadra",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 		 private Presidente user;
 		
 		 @OneToMany(mappedBy = "squadra", orphanRemoval = false)

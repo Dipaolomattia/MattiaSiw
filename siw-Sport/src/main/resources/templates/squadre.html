@@ -46,17 +46,17 @@
 					.logout{
 						margin-left:5px;
 					}
+					.logo{
+						background-color: white;
+					}
 			
 		   
 	  </style>
- 
 
-
-      
   <body>
-  <!--  <div><a href="/success"><img src="/images/trr.png" width="40%"/></a></div>
-    <h1>Giochi</h1>
-    -->
+  <header>
+	<div><a href="/" class="logo"><img src="/images/logo.png" width="25%"/></a></div>
+  </header>
     <div th:if="${squadre.isEmpty()}">Non ci sono squadre nel sistema</div>
 	<h1>Squadre</h1>
 		<div class="container">
@@ -76,3 +76,6 @@
   </body>
 
 </html>
+
+
+
